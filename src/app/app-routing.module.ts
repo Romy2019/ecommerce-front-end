@@ -3,10 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterComponent } from './user-pages/register/register.component';
 import { LoginComponent } from './user-pages/login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 const routes: Routes = [
-  { path: '', component: RegisterComponent }, //{ path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '', component: SignupComponent }, //{ path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'basic-ui', loadChildren: () => import('./basic-ui/basic-ui.module').then(m => m.BasicUiModule) },

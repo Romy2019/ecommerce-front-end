@@ -7,7 +7,12 @@ import { catchError } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
-  constructor(private http: HttpClient) { 
+
+  constructor(private http :HttpClient) { 
+  }
+  register(user: User) { 
+    console.log(user)
+      return this.http.post(`http://localhost:3000/users/register`,user);
   }
 
 
@@ -32,11 +37,6 @@ export class UserService {
   // errorHandler(errorHandler: any): import("rxjs").OperatorFunction<boolean, any> {
   //   throw new Error("Method not implemented.");
   // }
-
-  register(user: User) {
-      return this.http.post(`http://localhost:3000/users/register`,user);
-  }
-
 
   // delete(id: number) {
   //     return this.http.delete(`${config.apiUrl}/users/${id}`);
